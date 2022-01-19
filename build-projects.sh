@@ -26,11 +26,9 @@ do
                 cp -r "$DIST_FOLDER" "$OUTPUT_FOLDER"
             else
                 echo "Couldn't build $GRADLE_FILE"
-                exit 2
             fi
         else
             echo "$GRADLE_FILE doesnt exist"
-            exit 1
         fi
     fi
 done 9< <( find . -type f -name "build.gradle" -exec printf '%s\0' {} + )
